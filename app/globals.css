@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradientTextClass {
+  @apply bg-gradient-to-r from-white to-yellow-300 text-transparent bg-clip-text font-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-light;
+}
+
+/* Matrix background animation */
+@keyframes matrix-animation {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.matrix-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='150' viewBox='0 0 300 150'%3E%3Cg fill='%23ff0' fill-opacity='0.1'%3E%3Ctext x='0' y='20' font-family='monospace' font-size='20'%3E10110101%3C/text%3E%3Ctext x='50' y='40' font-family='monospace' font-size='20'%3E01001010%3C/text%3E%3Ctext x='100' y='60' font-family='monospace' font-size='20'%3E11010110%3C/text%3E%3Ctext x='0' y='80' font-family='monospace' font-size='20'%3E00101101%3C/text%3E%3Ctext x='50' y='100' font-family='monospace' font-size='20'%3E10110010%3C/text%3E%3Ctext x='100' y='120' font-family='monospace' font-size='20'%3E01101001%3C/text%3E%3C/g%3E%3C/svg%3E");
+  animation: matrix-animation 20s linear infinite;
+}
+
+.ultra-thin {
+  font-weight: 100;
+}
+
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(to right, #FFD700, #000000);
+}
+
+.cursor-swirl {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 100, 0, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
